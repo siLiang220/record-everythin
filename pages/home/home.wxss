@@ -1,7 +1,14 @@
 page {
   box-sizing: border-box;
   padding-bottom: calc(env(safe-area-inset-bottom) + 96rpx);
+
 }
+
+.custom-navbar {
+  --td-navbar-color: #fff;
+  --td-navbar-bg-color: #10AEFF;
+}
+
 
 .t-tabs.t-tabs--top .t-tabs__scroll {
   border-bottom: none !important;
@@ -13,6 +20,8 @@ page {
 
 .home-page-container {
   background: #f5f5f5;
+  border-radius: 17rpx;
+  margin-top: 16rpx;
 }
 
 .home-page-container,
@@ -60,6 +69,7 @@ page {
 .home-page-container .tab.order-nav .order-nav-item.scroll-width {
   min-width: 165rpx;
 }
+
 .home-page-container .tab .order-nav-item.active {
   color: #fa550f !important;
 }
@@ -94,24 +104,46 @@ page {
   height: 86rpx !important;
 }
 
+
 .home-page-container .goods-list-container {
-  background: #f5f5f5 !important;
+  background: #FFFFFF !important;
   margin-top: 16rpx;
 }
 
-.home-page-tabs {
-  --td-tab-nav-bg-color: transparent;
-  --td-tab-border-color: transparent;
-  --td-tab-item-color: #666;
-  --td-tab-track-color: red;
-}
-
 /* 这里一下是新写的 */
+
+/* .home-page-container {
+ 
+  background: #FFFFFF !important;
+} */
+
 .home-page-tabs-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.home-page-tabs {
+  /* --td-tab-nav-bg-color: transparent;
+  --td-tab-border-color: transparent;
+  --td-tab-item-color: #666;
+  --td-tab-track-color: red; */
+  /* border: 1rpx solid #333; */
+}
+
+.home-page-tabs-bar .home-page-tabs {}
+
+.home-page-tabs-bar .t-search__input-container {
+  border-radius: 32rpx !important;
+  height: 64rpx !important;
+}
+
+.home-page-tabs-bar .t-search__input {
+  font-size: 28rpx !important;
+  color: rgb(116, 116, 116) !important;
+}
+
+
 
 .home-page-tabs {
   /* display: flex;

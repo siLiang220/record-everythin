@@ -15,7 +15,7 @@ Page({
     interval: 5000,
     navigation: { type: 'dots' },
     swiperImageProps: { mode: 'scaleToFill' },
-    isSearchVisible: true,
+    isSearchVisible: false,
   },
 
   goodListPagination: {
@@ -26,7 +26,12 @@ Page({
   privateData: {
     tabIndex: 0,
   },
-
+  switchSearchVisible() {
+    const that = this;
+    that.setData({
+      isSearchVisible: !that.data.isSearchVisible,
+    });
+  },
   onShow() {
     this.getTabBar().init();
   },

@@ -1,33 +1,23 @@
+<view class="block">
+  <t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content" class="custom-navbar">
+    <text class="left-text" slot="left"> 登录</text>
+  </t-navbar>
+</view>
+
 <view style="text-align: center; color: #b9b9b9" wx:if="{{pageLoading}}">
   <t-loading theme="circular" size="40rpx" text="加载中..." inherit-color />
 </view>
 <view class="home-page-header">
-  <view class="search" bind:tap="navToSearchPage">
-    <t-search
-      t-class-input="t-search__input"
-      t-class-input-container="t-search__input-container"
-      placeholder="iphone 13 火热发售中"
-      leftIcon=""
-      disabled
-    >
+  <!-- <view class="search" bind:tap="navToSearchPage">
+    <t-search t-class-input="t-search__input" t-class-input-container="t-search__input-container" placeholder="iphone 13 火热发售中" leftIcon="" disabled>
     </t-search>
   </view>
   <view class="swiper-wrap">
-    <t-swiper
-      wx:if="{{imgSrcs.length > 0}}"
-      current="{{current}}"
-      autoplay="{{autoplay}}"
-      duration="{{duration}}"
-      interval="{{interval}}"
-      navigation="{{navigation}}"
-      imageProps="{{swiperImageProps}}"
-      list="{{imgSrcs}}"
-      bind:click="navToActivityDetail"
-    />
-  </view>
+    <t-swiper wx:if="{{imgSrcs.length > 0}}" current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}" imageProps="{{swiperImageProps}}" list="{{imgSrcs}}" bind:click="navToActivityDetail" />
+  </view> -->
 </view>
 <view class="home-page-container">
-  <view class="home-page-tabs-bar" > 
+  <view class="home-page-tabs-bar">
     <view class="home-page-tabs" wx:if="{{!isSearchVisible}}">
       <t-tabs
         t-class="t-tabs"
@@ -47,7 +37,7 @@
       </t-tabs>
     </view>
     <view class="home-page-search-icon" bindtap="showSearch" wx:if="{{!isSearchVisible}}">
-      <t-icon name="search" size="40rpx" color="#bbb" />
+      <t-icon name="search" size="40rpx" color="#bbb" bindtap="switchSearchVisible" />
     </view>
     <view class="home-page-search" wx:if="{{isSearchVisible}}">
       <t-search
@@ -58,10 +48,9 @@
       />
     </view>
     <view class="home-page-search-icon" bindtap="showSearch" wx:if="{{isSearchVisible}}">
-        <t-icon name="close-circle" size="40rpx" color="#bbb" />
-      </view>
+      <t-icon name="close-circle" size="40rpx" color="#bbb" bindtap="switchSearchVisible" />
+    </view>
   </view>
-
 
   <goods-list
     wr-class="goods-list-container"
